@@ -44,8 +44,6 @@
                 'tax_code' => $taxCode
             ];
             $stmt->execute($data);
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            return $result;
         }
 
         public function delete($id)
@@ -56,8 +54,6 @@
                 'id' => $id
             ];
             $stmt->execute($data);
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            return $result;
         }
 
         public function put($id, $name, $surname, $sidiCode, $taxCode)
@@ -72,8 +68,6 @@
                 'tax_code' => $taxCode
             ];
             $stmt->execute($data);
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            return $result;
         }
     }
 ?>

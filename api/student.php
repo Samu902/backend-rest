@@ -1,5 +1,5 @@
 <?php
-    include "./class/Student.php";
+    include "../class/Student.php";
 
     $method = $_SERVER["REQUEST_METHOD"];
     $student = new Student();
@@ -11,12 +11,12 @@
             if (isset($id))
             {
                 $result = $student->find($id);
-                $json_encode = json_encode(array('state' => true, 'student' => $result), true);
+                $json_encode = json_encode($result, true);
             }
             else
             {
                 $result = $student->all();
-                $json_encode = json_encode(array('state' => true, 'students' => $result), true);
+                $json_encode = json_encode($result, true);
             }
             header("Content-Type: application/json");
             echo($json_encode);
